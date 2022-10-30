@@ -10,24 +10,16 @@ import org.junit.jupiter.api.Test;
 import mru.controller.LinkedQueue;
 import mru.controller.QNode;
 /**
- * 
+ * Linked Queue JUnit test
  * @author christophernottingham
  *
  */
 class LinkedQueueTest {
 	
-	/*
-	 * To Test: 
-		 * enqueue 
-		 * dequeue 
-		 * getSize 
-		 * peek
-	 * 
-	 */
-	
-
-
 	@Test
+	/**
+	 * Testing the get size
+	 */
 	void testGetSize() {
 		
 		LinkedQueue <String> queue = new LinkedQueue();
@@ -41,6 +33,9 @@ class LinkedQueueTest {
 	}
 	
 	@Test 
+	/**
+	 * Testing the peek method
+	 */
 	void testPeek () {
 		LinkedQueue <String> queue = new LinkedQueue();
 		queue.enqueue("Christopher");
@@ -52,6 +47,9 @@ class LinkedQueueTest {
 	}
 	
 	@Test
+	/**
+	 * Testing the dequeue method
+	 */
 	void testDequeue () {
 		LinkedQueue <String> queue = new LinkedQueue();
 		queue.enqueue("Christopher");
@@ -63,11 +61,14 @@ class LinkedQueueTest {
 	
 	
 	@Test
+	/**
+	 * Testing the enqueue method
+	 */
 	void testEnqueue () {
 		String expected = "Christopher";
 		LinkedQueue <String> queue = new LinkedQueue();
 		queue.enqueue("Christopher");
-		String recived = queue.getFront().toString();
+		String recived = queue.peek().toString();
 		assertEquals(expected, recived );
 	
 	}
