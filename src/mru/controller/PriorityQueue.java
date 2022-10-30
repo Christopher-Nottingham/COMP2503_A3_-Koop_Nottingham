@@ -33,8 +33,8 @@ public class PriorityQueue<T> implements QueueInterface<T>{
             Comparable<T> compare = (Comparable<T>)(t);
 
             for(int i = 0; i < size; i++) {
-
-                int result = compare.compareTo(current.getData());
+            	
+            	int result = compare.compareTo(current.getData());
 
                 //Add as highest priority
                 if(result > 0) {
