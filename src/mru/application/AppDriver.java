@@ -40,13 +40,13 @@ public class AppDriver {
 			
 			int toContinue = continueChecker.nextInt();
 
-//			while (toContinue >= 2 && toContinue <= -1) {
-//				System.out.println("Entered a wrong value.....");
-//				System.out.println("Enter (1) to continue or (0) to exit");
-//				System.out.print("Would you like to continue?");
-//				continueChecker.reset();
-//				toContinue = continueChecker.nextInt();
-//			}
+			while (toContinue >= 2 || toContinue <= -1) {
+				System.out.println("Entered a wrong value.....");
+				System.out.println("Enter (1) to continue or (0) to exit");
+				System.out.print("Would you like to continue?");
+				continueChecker.reset();
+				toContinue = continueChecker.nextInt();
+			}
 
 			if (toContinue == 1) {
 
