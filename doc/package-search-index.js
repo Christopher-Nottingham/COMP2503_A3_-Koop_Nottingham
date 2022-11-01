@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"mru.controller"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"mru.application"},{"l":"mru.controller"},{"l":"mru.model"},{"l":"mru.test"}];updateSearchResults();

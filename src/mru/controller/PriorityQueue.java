@@ -4,12 +4,22 @@ import java.util.NoSuchElementException;
 
 import mru.model.QueueInterface;
 
+/**
+ * Priority Queue class
+ * @author Ethan Koop
+ * This class creates a priority queue, which sorts it's item depending on their priority.
+ * In this case, the highest priority is the lowest valued item in the queue. 
+ * @param <T>
+ */
 public class PriorityQueue<T> implements QueueInterface<T>{
 
 	private int size;
 	private QNode<T> front;
 	private QNode<T> rear;
 	
+	/**
+	 * Constructor for Priority Queue Class
+	 */
 	public PriorityQueue() {
 		
 		size = 0;
@@ -18,6 +28,11 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 	}
 	
 	
+	/**
+	 * Adds a item to the queue
+	 * Puts item with highest priority to the first position
+	 * Highest priority is lowest value
+	 */
 	@Override
 	public void enqueue(T t) {
 			
@@ -66,6 +81,10 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 		
 	}
 
+	/**
+	 * Removes an item from the queue
+	 * Removes the top data, the peek (item with highest priority).
+	 */
 	@Override
 	public T dequeue() {
 		if (isEmpty() == true) {
@@ -78,6 +97,9 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 		}
 	}
 
+	/**
+	 * Shows the top item in the queue
+	 */
 	@Override
 	public T peek() {
 		if (isEmpty() == true) {
@@ -87,12 +109,18 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 		return front.data;
 	}
 
+	/**
+	 * Gets the size of the queue
+	 */
 	@Override
 	public int getSize() {
 		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
+	/**
+	 * Checks if queue is empty
+	 */
 	@Override
 	public boolean isEmpty() {
 		if (front == null)
@@ -101,6 +129,9 @@ public class PriorityQueue<T> implements QueueInterface<T>{
 			return false;
 	}
 
+	/**
+	 * Prints the queue
+	 */
 	@Override
 	public void printQueue() {
 		
