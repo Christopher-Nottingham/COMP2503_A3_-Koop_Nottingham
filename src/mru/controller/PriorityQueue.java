@@ -52,14 +52,14 @@ public class PriorityQueue<T> implements QueueInterface<T>{
             	int result = compare.compareTo(current.getData());
 
                 //Add as highest priority
-                if(result > 0) {
+                if(result < 0) {
                     NodeToAdd.setNext(front);
                     front = NodeToAdd;
                     break;
                 }
 
                 //Add behind highest priority
-                else if(result < 0) {
+                else if(result > 0) {
                     NodeToAdd.setNext(current.getNext());
                     current.setNext(NodeToAdd);
                     break;

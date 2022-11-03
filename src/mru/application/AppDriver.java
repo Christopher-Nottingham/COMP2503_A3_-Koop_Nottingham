@@ -17,65 +17,46 @@ import mru.controller.PriorityQueue;
 public class AppDriver {
 	public static void main(String[] args) {
 
-		LinkedQueue<String> linkedQueueNames = new LinkedQueue<>();
+	  String aName;
+	    LinkedQueue<String> linkedQueueNames = new LinkedQueue<>();
 
-		PriorityQueue<String> priorityQueueNames = new PriorityQueue<>();
+	    PriorityQueue<String> priorityQueueNames = new PriorityQueue<>();
 
-		Scanner in = new Scanner(System.in);
+	    Scanner in = new Scanner(System.in);
+	    System.out.print("How many names do you want to add: ");
+	    int numberOfNames = in.nextInt();
+	    while (numberOfNames < 3) {
+	      System.out.println("Must enter at least 3 names");
+	      System.out.print("How many names do you want to add: ");
+	      numberOfNames = in.nextInt();
+	    }
+	    in.reset();
 
-		System.out.print("Enter a name that you want to add to the queue: ");
+	    for (int i = 0; i < numberOfNames; i++) {
+	      System.out.print("Enter a name that you want to add to the queue: ");
+	      aName = in.next();
+	      linkedQueueNames.enqueue(aName);
+	      priorityQueueNames.enqueue(aName);
 
-		String aName = in.nextLine();
+	    }
+	    
 
-		Boolean userChoice = true;
 
-		while (userChoice == true) {
-			linkedQueueNames.enqueue(aName);
-			priorityQueueNames.enqueue(aName);
 
-			System.out.println("Would you like to continue?");
-			System.out.println("Enter 1 to continue or 0 to exit");
+	    for (int i = 0; i < 2; i++) {
+	      linkedQueueNames.dequeue();
+	      priorityQueueNames.dequeue();
+	    }
 
-			Scanner continueChecker = new Scanner(System.in);
-			
-			int toContinue = continueChecker.nextInt();
 
-			while (toContinue >= 2 || toContinue <= -1) {
-				System.out.println("Entered a wrong value.....");
-				System.out.println("Enter (1) to continue or (0) to exit");
-				System.out.print("Would you like to continue?");
-				continueChecker.reset();
-				toContinue = continueChecker.nextInt();
-			}
+	    System.out.println("\nPrinting the linked Queue:");
+	    printQueue(linkedQueueNames);
 
-			if (toContinue == 1) {
+	    System.out.println("\n");
 
-				System.out.println("Enter a name that you want to add to the queue");
-
-				aName = in.nextLine();
-				userChoice = true;
-			}
-
-			else {
-				userChoice = false;
-			}
-
-		}
-
-		for (int i = 0; i < 2; i++) {
-			linkedQueueNames.dequeue();
-			priorityQueueNames.dequeue();
-
-		}
-
-		System.out.println("Printing the linked Queue:");
-		printQueue(linkedQueueNames);
-
-		System.out.println("\n");
-
-		System.out.println("Printing priority Queue:");
-		printQueue(priorityQueueNames);
-		in.close();
+	    System.out.println("Printing priority Queue:");
+	    printQueue(priorityQueueNames);
+	    in.close();
 
 	}
 
